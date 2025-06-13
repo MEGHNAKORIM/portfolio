@@ -105,10 +105,10 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="bg-slate-50 p-8 rounded-2xl">
+    <div className="bg-slate-50 dark:bg-gray-700 p-8 rounded-2xl transition-colors duration-300">
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
-          <Label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-2">
+          <Label htmlFor="name" className="block text-sm font-semibold text-slate-700 dark:text-gray-200 mb-2 transition-colors duration-300">
             Full Name
           </Label>
           <Input
@@ -118,7 +118,7 @@ export default function ContactForm() {
             onChange={(e) => handleChange('name', e.target.value)}
             onBlur={() => handleBlur('name')}
             placeholder="Enter your full name"
-            className={`w-full ${errors.name ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : ''}`}
+            className={`w-full bg-white dark:bg-gray-600 text-slate-900 dark:text-white border-slate-300 dark:border-gray-500 ${errors.name ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'focus:border-indigo-500 dark:focus:border-indigo-400'} transition-colors duration-300`}
           />
           {errors.name && (
             <span className="text-red-500 text-sm mt-1">{errors.name}</span>
@@ -126,7 +126,7 @@ export default function ContactForm() {
         </div>
         
         <div>
-          <Label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2">
+          <Label htmlFor="email" className="block text-sm font-semibold text-slate-700 dark:text-gray-200 mb-2 transition-colors duration-300">
             Email Address
           </Label>
           <Input
@@ -136,7 +136,7 @@ export default function ContactForm() {
             onChange={(e) => handleChange('email', e.target.value)}
             onBlur={() => handleBlur('email')}
             placeholder="Enter your email address"
-            className={`w-full ${errors.email ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : ''}`}
+            className={`w-full bg-white dark:bg-gray-600 text-slate-900 dark:text-white border-slate-300 dark:border-gray-500 ${errors.email ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'focus:border-indigo-500 dark:focus:border-indigo-400'} transition-colors duration-300`}
           />
           {errors.email && (
             <span className="text-red-500 text-sm mt-1">{errors.email}</span>
@@ -144,7 +144,7 @@ export default function ContactForm() {
         </div>
         
         <div>
-          <Label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-2">
+          <Label htmlFor="message" className="block text-sm font-semibold text-slate-700 dark:text-gray-200 mb-2 transition-colors duration-300">
             Message
           </Label>
           <Textarea
@@ -154,7 +154,7 @@ export default function ContactForm() {
             onChange={(e) => handleChange('message', e.target.value)}
             onBlur={() => handleBlur('message')}
             placeholder="Tell me about your project or just say hello!"
-            className={`w-full resize-none ${errors.message ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : ''}`}
+            className={`w-full resize-none bg-white dark:bg-gray-600 text-slate-900 dark:text-white border-slate-300 dark:border-gray-500 ${errors.message ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'focus:border-indigo-500 dark:focus:border-indigo-400'} transition-colors duration-300`}
           />
           {errors.message && (
             <span className="text-red-500 text-sm mt-1">{errors.message}</span>
@@ -164,7 +164,7 @@ export default function ContactForm() {
         <Button 
           type="submit" 
           disabled={isSubmitting}
-          className="w-full bg-indigo-500 hover:bg-indigo-600 disabled:bg-slate-300 text-white py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
+          className="w-full bg-indigo-500 hover:bg-indigo-600 disabled:bg-slate-300 dark:disabled:bg-gray-600 text-white py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
         >
           <span className="flex items-center justify-center gap-2">
             <i className={`fas ${isSubmitting ? 'fa-spinner fa-spin' : 'fa-paper-plane'}`}></i>
