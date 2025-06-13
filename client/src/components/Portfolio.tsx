@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
+import { useTheme } from '@/components/ThemeProvider';
 import ThreeScene from '@/components/ThreeScene';
 import ContactForm from '@/components/ContactForm';
 
 export default function Portfolio() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -44,46 +46,62 @@ export default function Portfolio() {
   }, []);
 
   return (
-    <div className="font-inter bg-slate-50 overflow-x-hidden">
+    <div className="font-inter bg-slate-50 dark:bg-gray-900 overflow-x-hidden transition-colors duration-300">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-200/50">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-slate-200/50 dark:border-gray-700/50 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-xl font-bold text-slate-800">
+            <div className="text-xl font-bold text-slate-800 dark:text-white">
               <span className="text-indigo-500">Alex</span> Morgan
             </div>
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden md:flex items-center space-x-8">
               <button 
                 onClick={() => scrollToSection('hero')}
-                className="text-slate-600 hover:text-indigo-500 transition-colors duration-300"
+                className="text-slate-600 dark:text-gray-300 hover:text-indigo-500 transition-colors duration-300"
               >
                 Home
               </button>
               <button 
                 onClick={() => scrollToSection('about')}
-                className="text-slate-600 hover:text-indigo-500 transition-colors duration-300"
+                className="text-slate-600 dark:text-gray-300 hover:text-indigo-500 transition-colors duration-300"
               >
                 About
               </button>
               <button 
                 onClick={() => scrollToSection('projects')}
-                className="text-slate-600 hover:text-indigo-500 transition-colors duration-300"
+                className="text-slate-600 dark:text-gray-300 hover:text-indigo-500 transition-colors duration-300"
               >
                 Projects
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="text-slate-600 hover:text-indigo-500 transition-colors duration-300"
+                className="text-slate-600 dark:text-gray-300 hover:text-indigo-500 transition-colors duration-300"
               >
                 Contact
               </button>
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-lg bg-slate-100 dark:bg-gray-800 text-slate-600 dark:text-gray-300 hover:text-indigo-500 transition-colors duration-300"
+                title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+              >
+                <i className={`fas ${theme === 'light' ? 'fa-moon' : 'fa-sun'} text-lg`}></i>
+              </button>
             </div>
-            <button 
-              className="md:hidden text-slate-600 hover:text-indigo-500"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              <i className="fas fa-bars text-xl"></i>
-            </button>
+            <div className="flex items-center gap-4 md:hidden">
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-lg bg-slate-100 dark:bg-gray-800 text-slate-600 dark:text-gray-300 hover:text-indigo-500 transition-colors duration-300"
+                title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+              >
+                <i className={`fas ${theme === 'light' ? 'fa-moon' : 'fa-sun'} text-lg`}></i>
+              </button>
+              <button 
+                className="text-slate-600 dark:text-gray-300 hover:text-indigo-500"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                <i className="fas fa-bars text-xl"></i>
+              </button>
+            </div>
           </div>
           {/* Mobile Menu */}
           {mobileMenuOpen && (
@@ -91,25 +109,25 @@ export default function Portfolio() {
               <div className="flex flex-col space-y-4">
                 <button 
                   onClick={() => scrollToSection('hero')}
-                  className="text-slate-600 hover:text-indigo-500 transition-colors duration-300 text-left"
+                  className="text-slate-600 dark:text-gray-300 hover:text-indigo-500 transition-colors duration-300 text-left"
                 >
                   Home
                 </button>
                 <button 
                   onClick={() => scrollToSection('about')}
-                  className="text-slate-600 hover:text-indigo-500 transition-colors duration-300 text-left"
+                  className="text-slate-600 dark:text-gray-300 hover:text-indigo-500 transition-colors duration-300 text-left"
                 >
                   About
                 </button>
                 <button 
                   onClick={() => scrollToSection('projects')}
-                  className="text-slate-600 hover:text-indigo-500 transition-colors duration-300 text-left"
+                  className="text-slate-600 dark:text-gray-300 hover:text-indigo-500 transition-colors duration-300 text-left"
                 >
                   Projects
                 </button>
                 <button 
                   onClick={() => scrollToSection('contact')}
-                  className="text-slate-600 hover:text-indigo-500 transition-colors duration-300 text-left"
+                  className="text-slate-600 dark:text-gray-300 hover:text-indigo-500 transition-colors duration-300 text-left"
                 >
                   Contact
                 </button>
@@ -120,21 +138,21 @@ export default function Portfolio() {
       </nav>
 
       {/* Hero Section */}
-      <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-50 via-indigo-50 to-purple-50">
+      <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-indigo-900 transition-colors duration-300">
         {/* Background 3D Canvas */}
         <ThreeScene />
         
         {/* Hero Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
           <div className="animate-fade-in">
-            <h1 className="text-5xl md:text-7xl font-bold text-slate-800 mb-6">
+            <h1 className="text-5xl md:text-7xl font-bold text-slate-800 dark:text-white mb-6 transition-colors duration-300">
               <span className="block">Hi, I'm</span>
               <span className="bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">Alex Morgan</span>
             </h1>
-            <p className="text-xl md:text-2xl text-slate-600 mb-8 font-light">
+            <p className="text-xl md:text-2xl text-slate-600 dark:text-gray-300 mb-8 font-light transition-colors duration-300">
               Full Stack Developer & Creative Technologist
             </p>
-            <p className="text-lg text-slate-500 mb-12 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg text-slate-500 dark:text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed transition-colors duration-300">
               I craft digital experiences that blend cutting-edge technology with beautiful design. 
               Specializing in React, Node.js, and immersive 3D web applications.
             </p>
@@ -151,7 +169,7 @@ export default function Portfolio() {
               <Button 
                 onClick={() => scrollToSection('contact')}
                 variant="outline"
-                className="border-2 border-slate-300 hover:border-indigo-500 text-slate-700 hover:text-indigo-500 px-8 py-4 rounded-lg font-semibold transition-all duration-300"
+                className="border-2 border-slate-300 dark:border-gray-600 hover:border-indigo-500 text-slate-700 dark:text-gray-300 hover:text-indigo-500 px-8 py-4 rounded-lg font-semibold transition-all duration-300"
               >
                 <span className="flex items-center gap-2">
                   <i className="fas fa-envelope"></i>
@@ -164,25 +182,25 @@ export default function Portfolio() {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-float">
-          <div className="w-6 h-10 border-2 border-slate-400 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-slate-400 rounded-full mt-2 animate-bounce"></div>
+          <div className="w-6 h-10 border-2 border-slate-400 dark:border-gray-500 rounded-full flex justify-center transition-colors duration-300">
+            <div className="w-1 h-3 bg-slate-400 dark:bg-gray-500 rounded-full mt-2 animate-bounce transition-colors duration-300"></div>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white">
+      <section id="about" className="py-20 bg-white dark:bg-gray-800 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <div>
-                <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
+                <h2 className="text-4xl md:text-5xl font-bold text-slate-800 dark:text-white mb-4 transition-colors duration-300">
                   About <span className="text-indigo-500">Me</span>
                 </h2>
                 <div className="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"></div>
               </div>
               
-              <div className="space-y-6 text-slate-600 leading-relaxed">
+              <div className="space-y-6 text-slate-600 dark:text-gray-300 leading-relaxed transition-colors duration-300">
                 <p className="text-lg">
                   I'm a passionate full-stack developer with over 5 years of experience creating 
                   innovative web applications. My journey began with a curiosity for how things work, 
