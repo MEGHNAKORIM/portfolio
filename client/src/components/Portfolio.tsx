@@ -229,9 +229,9 @@ export default function Portfolio() {
                   { icon: 'fab fa-aws', name: 'AWS', color: 'text-orange-500' },
                   { icon: 'fab fa-docker', name: 'Docker', color: 'text-blue-600' }
                 ].map((skill) => (
-                  <div key={skill.name} className="bg-slate-50 p-4 rounded-lg text-center hover:bg-indigo-50 transition-colors duration-300">
+                  <div key={skill.name} className="bg-slate-50 dark:bg-gray-700 p-4 rounded-lg text-center hover:bg-indigo-50 dark:hover:bg-gray-600 transition-colors duration-300">
                     <i className={`${skill.icon} text-2xl ${skill.color} mb-2`}></i>
-                    <p className="font-semibold text-slate-700">{skill.name}</p>
+                    <p className="font-semibold text-slate-700 dark:text-gray-200">{skill.name}</p>
                   </div>
                 ))}
               </div>
@@ -255,14 +255,14 @@ export default function Portfolio() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-slate-50">
+      <section id="projects" className="py-20 bg-slate-50 dark:bg-gray-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 dark:text-white mb-4 transition-colors duration-300">
               Featured <span className="text-indigo-500">Projects</span>
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full mx-auto mb-6"></div>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            <p className="text-xl text-slate-600 dark:text-gray-300 max-w-2xl mx-auto transition-colors duration-300">
               Explore some of my recent work showcasing modern web development 
               and creative problem-solving.
             </p>
@@ -270,7 +270,7 @@ export default function Portfolio() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Project 1: E-commerce Platform */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
               <img 
                 src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
                 alt="E-commerce platform project preview" 
@@ -280,23 +280,23 @@ export default function Portfolio() {
               <div className="p-6">
                 <div className="flex items-center gap-2 mb-3">
                   <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                  <span className="text-sm text-slate-500 font-medium">Full Stack</span>
+                  <span className="text-sm text-slate-500 dark:text-gray-400 font-medium">Full Stack</span>
                 </div>
                 
-                <h3 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-indigo-600 transition-colors">
+                <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-3 group-hover:text-indigo-600 transition-colors">
                   ModernShop E-commerce
                 </h3>
                 
-                <p className="text-slate-600 mb-4">
+                <p className="text-slate-600 dark:text-gray-300 mb-4 transition-colors duration-300">
                   A full-featured e-commerce platform built with React, Node.js, and Stripe integration. 
                   Features include real-time inventory, advanced filtering, and seamless checkout experience.
                 </p>
                 
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">React</span>
-                  <span className="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full">Node.js</span>
-                  <span className="px-3 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">MongoDB</span>
-                  <span className="px-3 py-1 bg-yellow-100 text-yellow-800 text-xs rounded-full">Stripe</span>
+                  <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">React</span>
+                  <span className="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs rounded-full">Node.js</span>
+                  <span className="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs rounded-full">MongoDB</span>
+                  <span className="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 text-xs rounded-full">Stripe</span>
                 </div>
                 
                 <div className="flex gap-3">
@@ -304,7 +304,7 @@ export default function Portfolio() {
                     <i className="fab fa-github"></i>
                     Code
                   </a>
-                  <a href="#" className="flex items-center gap-2 text-slate-500 hover:text-slate-700 font-medium transition-colors">
+                  <a href="#" className="flex items-center gap-2 text-slate-500 dark:text-gray-400 hover:text-slate-700 dark:hover:text-gray-200 font-medium transition-colors">
                     <i className="fas fa-external-link-alt"></i>
                     Live Demo
                   </a>
@@ -313,7 +313,7 @@ export default function Portfolio() {
             </div>
 
             {/* Project 2: 3D Portfolio Website */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
               <img 
                 src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
                 alt="3D interactive portfolio website" 
@@ -323,23 +323,23 @@ export default function Portfolio() {
               <div className="p-6">
                 <div className="flex items-center gap-2 mb-3">
                   <div className="w-3 h-3 bg-purple-400 rounded-full"></div>
-                  <span className="text-sm text-slate-500 font-medium">Frontend</span>
+                  <span className="text-sm text-slate-500 dark:text-gray-400 font-medium">Frontend</span>
                 </div>
                 
-                <h3 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-indigo-600 transition-colors">
+                <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-3 group-hover:text-indigo-600 transition-colors">
                   Interactive 3D Portfolio
                 </h3>
                 
-                <p className="text-slate-600 mb-4">
+                <p className="text-slate-600 dark:text-gray-300 mb-4 transition-colors duration-300">
                   An immersive portfolio experience featuring Three.js animations, WebGL shaders, 
                   and interactive 3D models. Showcases advanced frontend capabilities and creative design.
                 </p>
                 
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 bg-red-100 text-red-800 text-xs rounded-full">Three.js</span>
-                  <span className="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">WebGL</span>
-                  <span className="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full">GSAP</span>
-                  <span className="px-3 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">Blender</span>
+                  <span className="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 text-xs rounded-full">Three.js</span>
+                  <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">WebGL</span>
+                  <span className="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs rounded-full">GSAP</span>
+                  <span className="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs rounded-full">Blender</span>
                 </div>
                 
                 <div className="flex gap-3">
@@ -347,7 +347,7 @@ export default function Portfolio() {
                     <i className="fab fa-github"></i>
                     Code
                   </a>
-                  <a href="#" className="flex items-center gap-2 text-slate-500 hover:text-slate-700 font-medium transition-colors">
+                  <a href="#" className="flex items-center gap-2 text-slate-500 dark:text-gray-400 hover:text-slate-700 dark:hover:text-gray-200 font-medium transition-colors">
                     <i className="fas fa-external-link-alt"></i>
                     Live Demo
                   </a>
@@ -356,7 +356,7 @@ export default function Portfolio() {
             </div>
 
             {/* Project 3: AI-Powered Analytics Dashboard */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group">
               <img 
                 src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
                 alt="AI analytics dashboard with data visualization" 
@@ -366,23 +366,23 @@ export default function Portfolio() {
               <div className="p-6">
                 <div className="flex items-center gap-2 mb-3">
                   <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
-                  <span className="text-sm text-slate-500 font-medium">AI/ML</span>
+                  <span className="text-sm text-slate-500 dark:text-gray-400 font-medium">AI/ML</span>
                 </div>
                 
-                <h3 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-indigo-600 transition-colors">
+                <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-3 group-hover:text-indigo-600 transition-colors">
                   AI Analytics Dashboard
                 </h3>
                 
-                <p className="text-slate-600 mb-4">
+                <p className="text-slate-600 dark:text-gray-300 mb-4 transition-colors duration-300">
                   A comprehensive analytics platform powered by machine learning algorithms. 
                   Features predictive analytics, real-time data processing, and intuitive visualizations.
                 </p>
                 
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Python</span>
-                  <span className="px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full">FastAPI</span>
-                  <span className="px-3 py-1 bg-red-100 text-red-800 text-xs rounded-full">Redis</span>
-                  <span className="px-3 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">TensorFlow</span>
+                  <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs rounded-full">Python</span>
+                  <span className="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs rounded-full">FastAPI</span>
+                  <span className="px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 text-xs rounded-full">Redis</span>
+                  <span className="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs rounded-full">TensorFlow</span>
                 </div>
                 
                 <div className="flex gap-3">
@@ -390,7 +390,7 @@ export default function Portfolio() {
                     <i className="fab fa-github"></i>
                     Code
                   </a>
-                  <a href="#" className="flex items-center gap-2 text-slate-500 hover:text-slate-700 font-medium transition-colors">
+                  <a href="#" className="flex items-center gap-2 text-slate-500 dark:text-gray-400 hover:text-slate-700 dark:hover:text-gray-200 font-medium transition-colors">
                     <i className="fas fa-external-link-alt"></i>
                     Live Demo
                   </a>
@@ -412,14 +412,14 @@ export default function Portfolio() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-white">
+      <section id="contact" className="py-20 bg-white dark:bg-gray-800 transition-colors duration-300">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 dark:text-white mb-4 transition-colors duration-300">
               Get In <span className="text-indigo-500">Touch</span>
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full mx-auto mb-6"></div>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            <p className="text-xl text-slate-600 dark:text-gray-300 max-w-2xl mx-auto transition-colors duration-300">
               Have a project in mind or just want to chat? I'd love to hear from you. 
               Let's create something amazing together.
             </p>
@@ -429,36 +429,36 @@ export default function Portfolio() {
             {/* Contact Info */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold text-slate-800 mb-6">Let's Connect</h3>
+                <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-6 transition-colors duration-300">Let's Connect</h3>
                 
                 <div className="space-y-6">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+                    <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900 rounded-lg flex items-center justify-center transition-colors duration-300">
                       <i className="fas fa-envelope text-indigo-500"></i>
                     </div>
                     <div>
-                      <p className="font-semibold text-slate-800">Email</p>
-                      <p className="text-slate-600">alex.morgan@example.com</p>
+                      <p className="font-semibold text-slate-800 dark:text-white">Email</p>
+                      <p className="text-slate-600 dark:text-gray-300">alex.morgan@example.com</p>
                     </div>
                   </div>
                   
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+                    <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900 rounded-lg flex items-center justify-center transition-colors duration-300">
                       <i className="fas fa-phone text-indigo-500"></i>
                     </div>
                     <div>
-                      <p className="font-semibold text-slate-800">Phone</p>
-                      <p className="text-slate-600">+1 (555) 123-4567</p>
+                      <p className="font-semibold text-slate-800 dark:text-white">Phone</p>
+                      <p className="text-slate-600 dark:text-gray-300">+1 (555) 123-4567</p>
                     </div>
                   </div>
                   
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+                    <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900 rounded-lg flex items-center justify-center transition-colors duration-300">
                       <i className="fas fa-map-marker-alt text-indigo-500"></i>
                     </div>
                     <div>
-                      <p className="font-semibold text-slate-800">Location</p>
-                      <p className="text-slate-600">San Francisco, CA</p>
+                      <p className="font-semibold text-slate-800 dark:text-white">Location</p>
+                      <p className="text-slate-600 dark:text-gray-300">San Francisco, CA</p>
                     </div>
                   </div>
                 </div>
@@ -466,19 +466,19 @@ export default function Portfolio() {
 
               {/* Social Links */}
               <div>
-                <h4 className="text-lg font-semibold text-slate-800 mb-4">Follow Me</h4>
+                <h4 className="text-lg font-semibold text-slate-800 dark:text-white mb-4 transition-colors duration-300">Follow Me</h4>
                 <div className="flex gap-4">
-                  <a href="#" className="w-12 h-12 bg-slate-100 hover:bg-indigo-500 rounded-lg flex items-center justify-center transition-all duration-300 group">
-                    <i className="fab fa-linkedin text-slate-600 group-hover:text-white"></i>
+                  <a href="#" className="w-12 h-12 bg-slate-100 dark:bg-gray-700 hover:bg-indigo-500 rounded-lg flex items-center justify-center transition-all duration-300 group">
+                    <i className="fab fa-linkedin text-slate-600 dark:text-gray-300 group-hover:text-white"></i>
                   </a>
-                  <a href="#" className="w-12 h-12 bg-slate-100 hover:bg-gray-800 rounded-lg flex items-center justify-center transition-all duration-300 group">
-                    <i className="fab fa-github text-slate-600 group-hover:text-white"></i>
+                  <a href="#" className="w-12 h-12 bg-slate-100 dark:bg-gray-700 hover:bg-gray-800 rounded-lg flex items-center justify-center transition-all duration-300 group">
+                    <i className="fab fa-github text-slate-600 dark:text-gray-300 group-hover:text-white"></i>
                   </a>
-                  <a href="#" className="w-12 h-12 bg-slate-100 hover:bg-blue-500 rounded-lg flex items-center justify-center transition-all duration-300 group">
-                    <i className="fab fa-twitter text-slate-600 group-hover:text-white"></i>
+                  <a href="#" className="w-12 h-12 bg-slate-100 dark:bg-gray-700 hover:bg-blue-500 rounded-lg flex items-center justify-center transition-all duration-300 group">
+                    <i className="fab fa-twitter text-slate-600 dark:text-gray-300 group-hover:text-white"></i>
                   </a>
-                  <a href="#" className="w-12 h-12 bg-slate-100 hover:bg-pink-500 rounded-lg flex items-center justify-center transition-all duration-300 group">
-                    <i className="fab fa-dribbble text-slate-600 group-hover:text-white"></i>
+                  <a href="#" className="w-12 h-12 bg-slate-100 dark:bg-gray-700 hover:bg-pink-500 rounded-lg flex items-center justify-center transition-all duration-300 group">
+                    <i className="fab fa-dribbble text-slate-600 dark:text-gray-300 group-hover:text-white"></i>
                   </a>
                 </div>
               </div>
@@ -491,11 +491,11 @@ export default function Portfolio() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-800 text-white py-12">
+      <footer className="bg-slate-800 dark:bg-gray-950 text-white py-12 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <p className="text-slate-300">
+              <p className="text-slate-300 dark:text-gray-400 transition-colors duration-300">
                 © 2024 Alex Morgan. All rights reserved.
               </p>
             </div>
